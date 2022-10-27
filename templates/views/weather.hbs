@@ -20,7 +20,7 @@
                 <div class="tempInfromation">
                     <div class="top_layer">
                         <p id="day">Tuesday</p>
-                        <p id="today_data">26 OCT</p>
+                        <p id="dates">27 oct</p>
                     </div>
                     <div class="main_layer">
                         <p id="city_name">Get Output Here</p>
@@ -51,9 +51,14 @@
 
             let currentTime = new Date();
             days = weekday[currentTime.getDay()];
+            dates=currentTime.getDate();
+            months=currentTime.getMonth();
             let day=document.getElementById('day');
-
+            let date = document.getElementById('date');
+            let month = document.getElementById('month');
+            date.innerText = dates;
             day.innerText = days;
+            month.innerText = months;
         };
 
         getCurrentDay();
