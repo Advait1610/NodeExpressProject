@@ -20,6 +20,8 @@ const getInfo = async(event) =>{
         const response =await fetch(url);
         const data= await response.json();
         const arrData = [data];
+        console.log(arrData);
+        
         city_name.innerText = `${arrData[0].name},${arrData[0].sys.country}`;
         temp_real_val.innerText = arrData[0].main.temp;
         // temp_status.innerText = arrData[0].weather[0].main;
@@ -43,7 +45,8 @@ const getInfo = async(event) =>{
 
         data_hide.classList.remove('data_hide');
 
-        }catch{
+        }catch(err){
+            console.log('Error..:', err);
             city_name.innerText =`PLease Enter City name Properly!!`;
             data_hide.classList.add('data_hide');
         }
